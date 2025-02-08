@@ -128,7 +128,7 @@ def create_world(multirobot=False):
 
     r10coords = [(13.34, 6.02), (16.3, 6.02), (16.3, 9.27), (13.34, 9.27)]
     world.add_room(
-        name="Store_Room",
+        name="Lager",
         #pose=Pose(x=0.0, y=0.0, z=0.0, yaw=0.0),
         footprint=r10coords,
         color="red",
@@ -137,27 +137,36 @@ def create_world(multirobot=False):
 
     r11coords = [(13.34, 9.47), (16.3, 9.47), (16.3, 11.81), (13.34, 11.81)]
     world.add_room(
-        name="Copy_Room",
+        name="Drucker",
         #pose=Pose(x=0.0, y=0.0, z=0.0, yaw=0.0),
         footprint=r11coords,
         color="red",
         wall_width=0.1,
     )
 
-    r12coords = [(16.5, 6.02), (21.8, 6.02), (21.8, 11.81), (16.5, 11.81)]
+    r12coords = [(16.5, 6.02), (21.8, 6.02), (21.8, 9.27), (16.5, 9.27)]
     world.add_room(
-        name="Washroom",
+        name="WC",
         #pose=Pose(x=0.0, y=0.0, z=0.0, yaw=0.0),
         footprint=r12coords,
         color="red",
         wall_width=0.1,
     )
 
-    #################################### Hallways ########################################
+    r12coords = [(16.5, 9.47), (21.8, 9.47), (21.8, 11.81), (16.5, 11.81)]
+    world.add_room(
+        name="Server",
+        #pose=Pose(x=0.0, y=0.0, z=0.0, yaw=0.0),
+        footprint=r12coords,
+        color="red",
+        wall_width=0.1,
+    )
+
+    #################################### OpenSpaces ########################################
 
     r13coords = [(0, 3.93), (5.3, 3.93), (5.3, 15.05), (0, 15.05)]
     world.add_room(
-        name="Hallway_1",
+        name="OpenSpace_1",
         #pose=Pose(x=0.0, y=0.0, z=0.0, yaw=0.0),
         footprint=r13coords,
         color="grey",
@@ -166,7 +175,7 @@ def create_world(multirobot=False):
 
     r14coords = [(5.5, 9.47), (13.14, 9.47), (13.14, 15.05), (5.5, 15.05), (5.5, 9.47)]
     world.add_room(
-        name="Hallway_2",
+        name="OpenSpace_2",
         #pose=Pose(x=0.0, y=0.0, z=0.0, yaw=0.0),
         footprint=r14coords,
         color="grey",
@@ -175,7 +184,7 @@ def create_world(multirobot=False):
 
     r15coords = [(13.34, 12.01), (21.8, 12.01), (21.8, 15.05), (13.34, 15.05), (13.34, 12.01)]
     world.add_room(
-        name="Hallway_3",
+        name="OpenSpace_3",
         #pose=Pose(x=0.0, y=0.0, z=0.0, yaw=0.0),
         footprint=r15coords,
         color="grey",
@@ -184,7 +193,7 @@ def create_world(multirobot=False):
 
     r16coords = [(11, 6.02), (13.14, 6.02), (13.14, 9.27), (11, 9.27)]
     world.add_room(
-        name="Hallway_4",
+        name="OpenSpace_4",
         #pose=Pose(x=0.0, y=0.0, z=0.0, yaw=0.0),
         footprint=r16coords,
         color="grey",
@@ -193,7 +202,7 @@ def create_world(multirobot=False):
 
     r17coords = [(5.5, 3.93), (32.8, 3.93), (32.8, 5.82), (5.5, 5.82)]
     world.add_room(
-        name="Hallway_5",
+        name="OpenSpace_5",
         #pose=Pose(x=0.0, y=0.0, z=0.0, yaw=0.0),
         footprint=r17coords,
         color="grey",
@@ -202,7 +211,7 @@ def create_world(multirobot=False):
 
     r18coords = [(33, 0), (38.67, 0), (38.67, 5.82), (33, 5.82)]
     world.add_room(
-        name="Hallway_6",
+        name="OpenSpace_6",
         #pose=Pose(x=0.0, y=0.0, z=0.0, yaw=0.0),
         footprint=r18coords,
         color="grey",
@@ -211,7 +220,7 @@ def create_world(multirobot=False):
 
     r19coords = [(27.5, 6.02), (32.8, 6.02), (32.8, 15.05), (27.5, 15.05)]
     world.add_room(
-        name="Hallway_7",
+        name="OpenSpace_7",
         #pose=Pose(x=0.0, y=0.0, z=0.0, yaw=0.0),
         footprint=r19coords,
         color="grey",
@@ -230,8 +239,8 @@ def create_world(multirobot=False):
     ################## Connect Hallways #################
 
     world.add_hallway(
-        room_start="Hallway_1", 
-        room_end="Hallway_2", 
+        room_start="OpenSpace_1", 
+        room_end="OpenSpace_2", 
         width=5.58, 
         color="dimgray",
         wall_width=0.1,
@@ -240,8 +249,8 @@ def create_world(multirobot=False):
     )
 
     world.add_hallway(
-        room_start="Hallway_1", 
-        room_end="Hallway_5", 
+        room_start="OpenSpace_1", 
+        room_end="OpenSpace_5", 
         width=1.89, 
         color="dimgray",
         wall_width=0.1,
@@ -250,8 +259,8 @@ def create_world(multirobot=False):
     )
         
     world.add_hallway(
-        room_start="Hallway_2", 
-        room_end="Hallway_4", 
+        room_start="OpenSpace_2", 
+        room_end="OpenSpace_4", 
         width=2.14, 
         color="dimgray",
         wall_width=0.1,
@@ -260,8 +269,8 @@ def create_world(multirobot=False):
     )
 
     world.add_hallway(
-        room_start="Hallway_2", 
-        room_end="Hallway_3", 
+        room_start="OpenSpace_2", 
+        room_end="OpenSpace_3", 
         width=3.04, 
         color="dimgray",
         wall_width=0.1,
@@ -270,8 +279,8 @@ def create_world(multirobot=False):
     )
 
     world.add_hallway(
-        room_start="Hallway_5", 
-        room_end="Hallway_4", 
+        room_start="OpenSpace_5", 
+        room_end="OpenSpace_4", 
         width=2.14, 
         color="dimgray",
         wall_width=0.1,
@@ -280,8 +289,8 @@ def create_world(multirobot=False):
     )
 
     world.add_hallway(
-        room_start="Hallway_5", 
-        room_end="Hallway_6", 
+        room_start="OpenSpace_5", 
+        room_end="OpenSpace_6", 
         width=1.89, 
         color="dimgray",
         wall_width=0.1,
@@ -290,8 +299,8 @@ def create_world(multirobot=False):
     )
 
     world.add_hallway(
-        room_start="Hallway_5", 
-        room_end="Hallway_7", 
+        room_start="OpenSpace_5", 
+        room_end="OpenSpace_7", 
         width=5.3, 
         color="dimgray",
         wall_width=0.1,
@@ -304,16 +313,146 @@ def create_world(multirobot=False):
     
     world.add_hallway(
         room_start="Entrance", 
-        room_end="Hallway_5", 
-        width=0.5, 
+        room_end="OpenSpace_5", 
+        width=1.1, 
         color="dimgray",
         wall_width=0.1,
         conn_method="points",
         conn_points=[(23, 5), (23, 6), (23, 7)],
     )
-    
 
-    # Add robots
+    world.add_hallway(
+        room_start="OpenSpace_1", 
+        room_end="Office_1", 
+        width=1.1, 
+        color="dimgray",
+        wall_width=0.1,
+        conn_method="points",
+        conn_points=[(4.3, 3), (4.3, 4)],
+    )
+
+    world.add_hallway(
+        room_start="OpenSpace_5", 
+        room_end="Office_2", 
+        width=1.1, 
+        color="dimgray",
+        wall_width=0.1,
+        conn_method="points",
+        conn_points=[(9.8, 3), (9.8, 4)],
+    )
+
+    world.add_hallway(
+        room_start="OpenSpace_5", 
+        room_end="Office_3", 
+        width=1.1, 
+        color="dimgray",
+        wall_width=0.1,
+        conn_method="points",
+        conn_points=[(12, 3), (12, 4)],
+    )
+
+    world.add_hallway(
+        room_start="OpenSpace_5", 
+        room_end="Office_4", 
+        width=1.1, 
+        color="dimgray",
+        wall_width=0.1,
+        conn_method="points",
+        conn_points=[(20.8, 3), (20.8, 4)],
+    )
+    
+    world.add_hallway(
+        room_start="OpenSpace_5", 
+        room_end="Office_5", 
+        width=1.1, 
+        color="dimgray",
+        wall_width=0.1,
+        conn_method="points",
+        conn_points=[(26.75, 3), (26.75, 4)],
+    )
+
+    world.add_hallway(
+        room_start="OpenSpace_5", 
+        room_end="Office_6", 
+        width=1.1, 
+        color="dimgray",
+        wall_width=0.1,
+        conn_method="points",
+        conn_points=[(28.05, 3), (28.05, 4)],
+    )
+
+    world.add_hallway(
+        room_start="OpenSpace_7", 
+        room_end="Office_7", 
+        width=1.1, 
+        color="dimgray",
+        wall_width=0.1,
+        conn_method="points",
+        conn_points=[(32, 7.02), (34, 7.02)],
+    )
+
+    world.add_hallway(
+        room_start="OpenSpace_7", 
+        room_end="Office_8", 
+        width=1.1, 
+        color="dimgray",
+        wall_width=0.1,
+        conn_method="points",
+        conn_points=[(32, 10), (34, 10)],
+    )
+
+    world.add_hallway(
+        room_start="OpenSpace_5", 
+        room_end="Sensor_Lab", 
+        width=1.1, 
+        color="dimgray",
+        wall_width=0.1,
+        conn_method="points",
+        conn_points=[(9.8, 5), (9.8, 6.5)],
+    )
+
+    world.add_hallway(
+        room_start="OpenSpace_5", 
+        room_end="WC", 
+        width=1.1, 
+        color="dimgray",
+        wall_width=0.1,
+        conn_method="points",
+        conn_points=[(20.8, 5), (20.8, 6.5)],
+    )
+
+    world.add_hallway(
+        room_start="OpenSpace_4", 
+        room_end="Lager", 
+        width=1.1, 
+        color="dimgray",
+        wall_width=0.1,
+        conn_method="points",
+        conn_points=[(13, 7.1), (14, 7.1)],
+    )
+
+    world.add_hallway(
+        room_start="OpenSpace_3", 
+        room_end="Drucker", 
+        width=1.1, 
+        color="dimgray",
+        wall_width=0.1,
+        conn_method="points",
+        conn_points=[(14.34, 11), (14.34, 12.5)],
+    )
+
+    world.add_hallway(
+        room_start="OpenSpace_3", 
+        room_end="Server", 
+        width=1.1, 
+        color="dimgray",
+        wall_width=0.1,
+        conn_method="points",
+        conn_points=[(20.8, 11), (20.8, 12.5)],
+    )
+
+    ############# Add robots ############
+
     grasp_props = ParallelGraspProperties(
         max_width=0.175,
         depth=0.1,
@@ -347,7 +486,7 @@ def create_world(multirobot=False):
     }
     rrt_planner = RRTPlanner(**planner_config_rrt)
     robot0.set_path_planner(rrt_planner)
-    world.add_robot(robot0, loc="Hallway_1")
+    world.add_robot(robot0, loc="OpenSpace_1")
 
     if multirobot:
         robot1 = Robot(
@@ -358,16 +497,34 @@ def create_world(multirobot=False):
             grasp_generator=GraspGenerator(grasp_props),
             partial_observability=args.partial_observability,
         )
-        planner_config_prm = {
-            "world": world,
-            "collision_check_step_dist": 0.025,
-            "max_connection_dist": 1.5,
-            "max_nodes": 100,
-            "compress_path": False,
-        }
-        prm_planner = PRMPlanner(**planner_config_prm)
-        robot1.set_path_planner(prm_planner)
-        world.add_robot(robot1, loc="Hallway_7")
+        
+        # planner_config_prm = {
+        #     "world": world,
+        #     "collision_check_step_dist": 0.025,
+        #     "max_connection_dist": 1.5,
+        #     "max_nodes": 100,
+        #     "compress_path": False,
+        # }
+        # prm_planner = PRMPlanner(**planner_config_prm)
+        # robot1.set_path_planner(prm_planner)
+        # world.add_robot(robot1, loc="OpenSpace_7")
+
+        planner_config_rrt = {
+        "world": world,
+        "bidirectional": True,
+        "rrt_connect": False,
+        "rrt_star": True,
+        "collision_check_step_dist": 0.25,
+        "max_connection_dist": 5.0,
+        "rewire_radius": 1.5,
+        "compress_path": False,
+        "max_time": 10.0,
+        "max_nodes_sampled": 5000,
+
+    }
+    rrt_planner = RRTPlanner(**planner_config_rrt)
+    robot1.set_path_planner(rrt_planner)
+    world.add_robot(robot1, loc="OpenSpace_7")
 
 
     return world
