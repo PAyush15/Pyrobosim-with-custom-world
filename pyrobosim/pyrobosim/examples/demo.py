@@ -44,7 +44,7 @@ def create_world(multirobot=False):
         name="kitchen",
         pose=Pose(x=0.0, y=0.0, z=0.0, yaw=0.0),
         footprint=r1coords,
-        color="blue",
+        color="red",
         nav_poses=[Pose(x=0.75, y=0.75, z=0.0, yaw=0.0)],
     )
     r2coords = [(-0.875, -0.75), (0.875, -0.75), (0.875, 0.75), (-0.875, 0.75)]
@@ -58,7 +58,7 @@ def create_world(multirobot=False):
     world.add_room(
         name="bathroom",
         footprint=r3coords,
-        color=[1.0, 0.0, 0.6],
+        color=[0.0, 0.0, 0.6],
     )
 
     # Add hallways between the rooms
