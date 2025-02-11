@@ -521,10 +521,10 @@ def create_world(multirobot=False):
         "max_time": 10.0,
         "max_nodes_sampled": 5000,
 
-    }
-    rrt_planner = RRTPlanner(**planner_config_rrt)
-    robot1.set_path_planner(rrt_planner)
-    world.add_robot(robot1, loc="OpenSpace_7")
+        }
+        rrt_planner = RRTPlanner(**planner_config_rrt)
+        robot1.set_path_planner(rrt_planner)
+        world.add_robot(robot1, loc="OpenSpace_7")
 
 
     return world
