@@ -8,3 +8,5 @@ Consider the above image. The world is created solely using pyrobosim. pyrobosim
 To run the world environment for robot navigation, run the idac_world.py file at the location 'pyrobosim/pyrobosim/examples/' folder by navigation to that folder in the terminal and simply running the python script: 'python3 idac_world.py --multirobot'
 
 '--multirobot' argument launches the world with two robots which can be controlled independently.
+
+On a separate thread, we run the tasks that we ned to execute with the robot (Ex. nai=vigation, pick and place, etc.)
