@@ -8,15 +8,11 @@ Table of Contents:
   - [Project Structure](#projectstructure)
   - [Installation](#installation)
   - [Usage](#usage)
-  - [License](#license)
   - [Acknowledgments](#acknowledgments)
 
 ## Overview
 
-PyRoboSim is a lightweight 2D mobile robot simulator for behaviour prototyping. In this project, I use PyRoboSim to creation a custom world (and additionaly a gazebo environment) of my institute using the floor plan. 
-
-Consider the above image. The world is created solely using pyrobosim. pyrobosim is primarily a world modeling framework for prototyping high-level robotics behavior applications.
-
+PyRoboSim is a lightweight 2D mobile robot simulator for behaviour prototyping. In this project, I used PyRoboSim to create a custom world of my institute building using its floor plan. It includes defining the office rooms and labs, hallways, some locations and objects from pick-and-place tasks and robots (IDOGs). For the robots, we also have the option to use different path planeers or write one. Here, I use A* and RRT planners. Various tasks like navigationg to rooms/locations, pick or place operations and detecting objects are available. To control the robots, we can use the GUI, python scripts or ROS actions/services.
 
 ## Demo
 
@@ -43,8 +39,19 @@ pyrobosim-with-custom-world/
 ├── docker/               # Docker image with the image
 ├── docs/                # Package documentation
 ├── pyrobosim/           # main folder for pyrobosim files
+│   ├── 📂 examples/                  # Example scripts and demos
+│   ├── 📂 pyrobosim/                 # Main Python package for Pyrobosim
+│   ├── 📂 test/                      # Test scripts and configurations
+│   ├── 📜 setup.py                   # Setup script for installation
+│   ├── 📜 README.md                  # Project overview and documentation
 ├── pyrobosim_msgs/                      # pyrobosim message description for ROS action, services and topics
 ├── pyrobosim_ros/                      # Launch files for simulation and real-world runs
+│   ├── 📂 examples/                  # Example scripts and demos of pyrobosim with ROS
+│   ├── 📂 launch/                  # Example scripts and demos of pyrobosim with ROS
+│   ├── 📂 pyrobosim/                 # Main Python package for Pyrobosim of pyrobosim with ROS
+│   ├── 📂 test/                      # Test scripts and configurations of pyrobosim with ROS
+│   ├── 📜 setup.py                   # Setup script for installation of pyrobosim with ROS
+│   ├── 📜 README.md                  # Project overview and documentation of pyrobosim with ROS
 ├── setup/                        # bash setup files
 ├── test/                      # test files
 ├── CONTRIBUTING.md                     # contributors
@@ -54,7 +61,6 @@ pyrobosim-with-custom-world/
 ├── pyrobosim.env                      
 ├── pytest.ini                      
 ```
-
 
 
 ## Installation
@@ -81,15 +87,8 @@ To run the world environment for robot navigation, run the idac_world.py file at
 On a separate thread, we run the tasks that we need to execute with the robot (Ex. nai=vigation, pick and place, etc.)
 
 
-## License
-
-This project is licensed under the MIT License.
-Feel free to use, modify, and distribute — just give credit where it’s due!
-
 ## Acknowledgments
 
-Thanks to BVM Alumni Association for project funding
-
-Special thanks to Prof. Dr. Vinay Patel for mentorship and guidance
+Thanks to Sebastian Castro, the owner and maintainer of the PyRoboSim simulator for creaing this useful open-source tool. All rights and license for PyRoboSim used in this project belongs to Sebastian Castro.
 
 
