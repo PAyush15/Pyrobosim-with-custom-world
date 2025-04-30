@@ -38,32 +38,21 @@ Consider the above image. The world is created solely using pyrobosim. pyrobosim
 ### 📁 Project Structure
 
 ```plaintext
-autonomous-indoor-delivery-robot-main/
-├── 📜 README.md                     # Project overview and documentation
-├── 📜 qrcode_scan.py               # QR code detection script (Jetson Nano + Pi Cam)
-├── 📜 rosserial.ino                # Arduino code for servo/buzzer control
-
-├── 📂 adbot_description/           # URDF and package description for adbot
-│   ├── 📂 config/                      # ROS configuration and parameter files
-│   ├── 📂 launch/                      # Launch files for simulation and real-world runs
-│   ├── 📂 maps/                        # Saved maps for navigation
-│   ├── 📂 meshes/                      # STL files for 3D components
-│   ├── 📂 params/                      # Navigation parameter files (e.g., global_costmap_params.yaml)
-│   ├── 📂 scripts/                     # ROS Python nodes for robot behavior
-│   ├── 📂 urdf/                        # URDF files of the robot
-│   ├── 📂 worlds/                      # Custom Gazebo world files
-│   ├── 📜 CMakeLists.txt               # Build instructions for catkin
-│   ├── 📜 package.xml                  # ROS package metadata
-
-├── 📂 rmp_bot_description/         # URDF and package description for rmp_bot
-│   ├── 📜 CMakeLists.txt
-│   ├── 📜 LICENSE
-│   ├── 📜 package.xml
-
-├── 📂 ros_controllers-melodic-devel/  # External ROS control package fork
-│   ├── 📜 .gitignore
-│   ├── 📜 .travis.yml
-│   ├── 📜 README.md
+pyrobosim-with-custom-world/
+├── dependencies/                     # Project dependencies
+├── docker/               # Docker image with the image
+├── docs/                # Package documentation
+├── pyrobosim/           # main folder for pyrobosim files
+├── pyrobosim_msgs/                      # pyrobosim message description for ROS action, services and topics
+├── pyrobosim_ros/                      # Launch files for simulation and real-world runs
+├── setup/                        # bash setup files
+├── test/                      # test files
+├── CONTRIBUTING.md                     # contributors
+├── LICENSE.md                     # license
+├── README.md                      # README
+├── docker-compose.yaml    
+├── pyrobosim.env                      
+├── pytest.ini                      
 ```
 
 
@@ -71,58 +60,19 @@ autonomous-indoor-delivery-robot-main/
 ## Installation
 
 Prerequisites
-Ensure you have ROS Noetic installed on Ubuntu 20.04. If not, install it:
-```bash
-sudo apt update
-sudo apt install ros-noetic-desktop-full
-  ```
-Initialize rosdep and set up your environment:
-
-```bash
-sudo rosdep init
-rosdep update
-echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
-source ~/.bashrc
-  ```
-
-Install Required ROS Packages
-
-```bash
-sudo apt install -y \
-  ros-noetic-navigation \
-  ros-noetic-slam-gmapping \
-  ros-noetic-teleop-twist-keyboard \
-  ros-noetic-robot-state-publisher \
-  ros-noetic-joint-state-publisher-gui \
-  ros-noetic-xacro \
-  ros-noetic-gazebo-ros \
-  ros-noetic-map-server \
-  ros-noetic-amcl \
-  ros-noetic-rviz \
-  python3-rosdep \
-  python3-rosinstall \
-  python3-vcstools \
-  python3-catkin-tools
-  ```
+Follow this link to install and set up pyrobosim: https://pyrobosim.readthedocs.io/en/latest/setup.html
   
 Clone and Build the Package
 
 ```bash
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/src
-
 # Clone the repository
-git clone https://github.com/PAyush15/autonomous-indoor-delivery-robot
+git clone https://github.com/PAyush15/Pyrobosim-with-custom-world/tree/main
 
-# Build the workspace
-cd ~/catkin_ws
-catkin build
-
-# Source the setup file
-source devel/setup.bash
 ```
 
 ## Usage
+
+First, copy the idac_world.py file to the already set up pyrobosim environment or directly use the package
 
 To run the world environment for robot navigation, run the idac_world.py file at the location 'pyrobosim/pyrobosim/examples/' folder by navigation to that folder in the terminal and simply running the python script: 'python3 idac_world.py --multirobot'
 
